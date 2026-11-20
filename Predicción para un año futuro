@@ -1,0 +1,7 @@
+# Ejemplo: predecir las emisiones mundiales para 2030
+anio_futuro = pd.DataFrame({"Year": [2030]})
+
+prediccion_2030 = modelo.predict(anio_futuro)[0]
+
+print(f"Predicción de emisiones mundiales de CO₂ para 2030: "
+      f"{prediccion_2030:,.0f} toneladas")
