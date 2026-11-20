@@ -1,0 +1,8 @@
+# Filtrar desde 1950 hasta el último año disponible
+df_mundo = df_mundo[df_mundo["Year"] >= 1950]
+
+# Verificar el rango de años
+print("Año mínimo:", df_mundo["Year"].min())
+print("Año máximo:", df_mundo["Year"].max())
+
+df_mundo.tail()
