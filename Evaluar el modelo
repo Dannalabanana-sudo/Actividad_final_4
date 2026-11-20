@@ -1,0 +1,14 @@
+pendiente = modelo.coef_[0]
+intercepto = modelo.intercept_
+
+r2 = r2_score(y_test, y_pred)
+mae = mean_absolute_error(y_test, y_pred)
+mse = mean_squared_error(y_test, y_pred)
+rmse = np.sqrt(mse)
+
+print("Pendiente:", pendiente)
+print("Intercepto:", intercepto)
+print("R²:", r2)
+print("Error absoluto medio (MAE):", mae)
+print("Error cuadrático medio (MSE):", mse)
+print("Raíz del error cuadrático medio (RMSE):", rmse)
