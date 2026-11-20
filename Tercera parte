@@ -1,0 +1,12 @@
+# Dimensiones del conjunto de datos
+print("Número de filas:", df.shape[0])
+print("Número de columnas:", df.shape[1])
+
+# Nombres de las columnas
+print(df.columns)
+
+# Información general
+df.info()
+
+# Estadísticas descriptivas
+df.describe()
