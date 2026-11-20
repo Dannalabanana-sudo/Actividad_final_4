@@ -1,0 +1,26 @@
+plt.figure(figsize=(12, 6))
+
+# Datos reales
+plt.scatter(
+    df_mundo["Year"],
+    df_mundo["Annual CO₂ emissions"],
+    color="steelblue",
+    alpha=0.6,
+    label="Datos reales"
+)
+
+# Línea de regresión sobre todos los años
+plt.plot(
+    df_mundo["Year"],
+    modelo.predict(df_mundo[["Year"]]),
+    color="red",
+    linewidth=2,
+    label="Regresión lineal"
+)
+
+plt.title("Regresión lineal: emisiones mundiales de CO₂ por año")
+plt.xlabel("Año")
+plt.ylabel("Emisiones anuales de CO₂ (toneladas)")
+plt.legend()
+plt.grid(True)
+plt.show()
