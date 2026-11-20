@@ -1,0 +1,7 @@
+# Proyecto Final: Análisis de Emisiones Globales de $CO_2$ y Proyección mediante Regresión Lineal
+**Autora:** Danna Vanessa Devia Mendoza  
+**Programa:** Ingeniería Civil - Fundación Universitaria Agraria de Colombia (UNIAGRARIA)  
+**Fuente de datos:** Hannah Ritchie and Max Roser (2020) - *"CO₂ emissions"*. OurWorldInData.org.
+
+## Introducción
+El presente análisis explora la evolución histórica de las emisiones anuales de dióxido de carbono ($CO_2$) desde la Revolución Industrial hasta la actualidad, evaluando las desigualdades entre países desarrollados, economías emergentes y Colombia. Posteriormente, se implementa un modelo de regresión lineal para proyectar tendencias de emisión a futuro.
