@@ -1,0 +1,5 @@
+# Cantidad de valores nulos por columna
+df.isnull().sum()
+
+# Porcentaje de valores nulos
+(df.isnull().sum() / len(df)) * 100
