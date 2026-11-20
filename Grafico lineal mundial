@@ -1,0 +1,14 @@
+plt.figure(figsize=(12, 6))
+
+plt.plot(
+    df_mundo["Year"],
+    df_mundo["Annual CO₂ emissions"],
+    color="darkred",
+    linewidth=2
+)
+
+plt.title("Emisiones anuales de CO₂ en el mundo")
+plt.xlabel("Año")
+plt.ylabel("Emisiones anuales de CO₂ (toneladas)")
+plt.grid(True)
+plt.show()
