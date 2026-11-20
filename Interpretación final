@@ -1,0 +1,25 @@
+print(f"""
+Interpretación de resultados:
+
+La pendiente del modelo es aproximadamente {pendiente:,.0f}.
+Esto indica que, según la tendencia lineal, las emisiones mundiales
+de CO₂ aumentan en promedio {pendiente:,.0f} toneladas por cada año
+adicional dentro del período analizado.
+
+El coeficiente de determinación R² fue {r2:.3f}.
+Esto significa que el año explica aproximadamente el {r2 * 100:.1f}%
+de la variación de las emisiones mundiales de CO₂ en los datos de prueba.
+
+El MAE fue {mae:,.0f} toneladas, lo que representa el error promedio
+de las predicciones del modelo.
+
+Aunque la regresión lineal muestra una tendencia general de aumento,
+no captura completamente variaciones importantes causadas por crisis
+económicas, cambios en el consumo de energía, pandemias o políticas
+ambientales. Por ello, sus predicciones deben interpretarse como una
+estimación de tendencia y no como un pronóstico exacto.
+
+Este resultado se relaciona con el artículo de Our World in Data,
+que muestra que las emisiones globales de CO₂ han aumentado desde la
+Revolución Industrial y que su distribución entre países es desigual.
+""")
