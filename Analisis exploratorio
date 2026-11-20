@@ -1,0 +1,12 @@
+# Estadísticas de las emisiones mundiales
+df_mundo["Annual CO₂ emissions"].describe()
+
+# Año con mayores emisiones registradas
+anio_maximo = df_mundo.loc[
+    df_mundo["Annual CO₂ emissions"].idxmax(), "Year"
+]
+
+emision_maxima = df_mundo["Annual CO₂ emissions"].max()
+
+print(f"El año con mayores emisiones fue {anio_maximo}, "
+      f"con {emision_maxima:,.0f} toneladas de CO₂.")
