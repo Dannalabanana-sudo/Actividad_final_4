@@ -1,0 +1,40 @@
+# Seleccionamos los datos de Colombia desde 1990 (periodo de crecimiento industrial sostenido)
+df_modelo = df_col[df_col['Anio'] >= 1990].copy()
+
+X = df_modelo[['Anio']] # Variable independiente (Predictor)
+y = df_modelo['Emisiones_Mt'] # Variable dependiente (Objetivo)
+
+# División en conjuntos de entrenamiento (80%) y prueba (20%)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Entrenamiento del modelo
+modelo = LinearRegression()
+modelo.fit(X_train, y_train)
+
+# Predicciones
+y_pred = modelo.predict(X_test)
+
+# Evaluación del modelo
+r2 = r2_score(y_test, y_pred)
+rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+
+print(f"Pendiente (Tasa de crecimiento anual): {modelo.coef_[0]:.4f} Mt/año")
+print(f"Intercepto: {modelo.intercept_:.4f}")
+print(f"Coeficiente de determinación (R²): {r2:.4f}")
+print(f"Error Cuadrático Medio (RMSE): {rmse:.4f} Mt")
+
+# Proyección hacia el año 2035
+anios_futuros = pd.DataFrame({'Anio': np.arange(1990, 2036)})
+proyeccion = modelo.predict(anios_futuros)
+
+# Visualización del modelo y proyección
+plt.figure(figsize=(12, 6))
+plt.scatter(X, y, color='navy', label='Datos Históricos Reales (Colombia)', alpha=0.7)
+plt.plot(anios_futuros['Anio'], proyeccion, color='red', linestyle='--', linewidth=2, label='Tendencia Regresión Lineal y Proyección')
+plt.axvline(x=ultimo_anio, color='gray', linestyle=':', label=f'Inicio Proyección ({ultimo_anio})')
+plt.title('Modelo de Regresión Lineal: Proyección de Emisiones de CO₂ en Colombia al 2035', fontsize=14, fontweight='bold')
+plt.xlabel('Año', fontsize=12)
+plt.ylabel('Emisiones de CO₂ (Millones de Toneladas)', fontsize=12)
+plt.legend()
+plt.tight_layout()
+plt.show()
